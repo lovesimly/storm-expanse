@@ -1,2 +1,2 @@
 # storm-expanse
-Process Kafka message with JStorm
+Process Kafka message,write it to Elasticsearch with JStorm

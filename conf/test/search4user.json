@@ -1,0 +1,27 @@
+{
+  "es": {
+    "index": "user_storm_tst",
+    "type": "user",
+    "clusterName": "es-test",
+    "clusterUrls": "192.168.10.2:9300"
+  },
+  "storm": {
+    "topologyName": "search4user_incr_tst",
+    "spoutCount": 4,
+    "boltCount": 8,
+    "workerCount": 9,
+    "maxPendingCount": 1000
+  },
+  "kafka": {
+    "topic": "topic",
+    "groupId": "groupId",
+    "brokers": "192.168.2:9092"
+  },
+  "restServiceUrl": "http://users.gtexpanse.com/getUserInfo/",
+  "transferFields": [
+    "id",
+    "gmt_modified"
+  ],
+  "indexMappingId": "id",
+  "messageHandlerClass": "com.gtexpanse.app.expanse.biz.impl.PolicyHandlerImpl"
+}
