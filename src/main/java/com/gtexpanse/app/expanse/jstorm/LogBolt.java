@@ -1,21 +1,19 @@
 package com.gtexpanse.app.expanse.jstorm;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Map;
-
-import com.gtexpanse.app.expanse.bean.ExpanseConfig;
-import com.gtexpanse.app.expanse.bean.MessageTuple;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.gtexpanse.app.expanse.es.ElasticSearchClient;
-
 import backtype.storm.task.OutputCollector;
 import backtype.storm.task.TopologyContext;
 import backtype.storm.topology.IRichBolt;
 import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.tuple.Tuple;
+import com.gtexpanse.app.expanse.bean.ExpanseConfig;
+import com.gtexpanse.app.expanse.bean.MessageTuple;
+import com.gtexpanse.app.expanse.es.ElasticSearchClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Map;
 
 /**
  * log bolt:用来把所有的事件记录到log es集群，方便查询和回流
@@ -24,15 +22,15 @@ import backtype.storm.tuple.Tuple;
  * </p>
  */
 public class LogBolt implements IRichBolt {
-    public static final Logger  log              = LoggerFactory.getLogger(LogBolt.class);
-    private static final long   serialVersionUID = -5452328665129906235L;
+    public static final Logger log = LoggerFactory.getLogger(LogBolt.class);
+    private static final long serialVersionUID = -5452328665129906235L;
 
-    private OutputCollector     collector;
+    private OutputCollector collector;
 
     private ExpanseConfig conf;
     private ElasticSearchClient esClient;
 
-    private SimpleDateFormat    dateFormat       = new SimpleDateFormat("yyyyMMdd");
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 
     public LogBolt(ExpanseConfig conf) {
         super();

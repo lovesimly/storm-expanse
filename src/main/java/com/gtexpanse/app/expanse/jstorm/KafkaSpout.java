@@ -86,7 +86,7 @@ public class KafkaSpout implements IRichSpout, IAckValueSpout, IFailValueSpout {
         //                String.valueOf(config.getStorm().getMaxPendingCount()));
 
         consumer = new KafkaConsumer<>(properties);
-        consumer.subscribe(Collections.singletonList(config.getKafka().getTopic()),new MessageConsumer());
+        consumer.subscribe(Collections.singletonList(config.getKafka().getTopic()), new MessageConsumer());
 //        KafkaFactory factory = new ZAKafkaFactory();
 //        consumer = factory.createConsumer(properties);
 //        consumer.subscribe(config.getKafka().getTopic(), new MessageConsumer());
