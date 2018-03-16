@@ -1,3 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
-.idea
 target/
+.idea/compiler.xml
+.idea/libraries/
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+.idea/storm-expanse.iml
