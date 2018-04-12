@@ -1,4 +1,4 @@
-package com.gtexpanse.app.expanse.boot;
+package expanse.jstorm;
 
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
