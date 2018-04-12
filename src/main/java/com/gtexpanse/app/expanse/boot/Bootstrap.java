@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * es 实时增量程序启动入口 - storm-cluster模式启动类
+ *
+ * jstorm jar xxx.jar Bootstrap
  */
 public class Bootstrap {
 

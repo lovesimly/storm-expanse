@@ -2,7 +2,6 @@ package com.gtexpanse.app.expanse.bean;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.io.Files;
-import lombok.Data;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,7 +12,6 @@ import java.util.List;
 /**
  * Expanse config - 配置总成
  */
-@Data
 public class ExpanseConfig implements Serializable {
 
     private static final long serialVersionUID = -6047441989252839585L;
@@ -74,4 +72,67 @@ public class ExpanseConfig implements Serializable {
         return JSON.parseObject(fc, ExpanseConfig.class);
     }
 
+    public ESConfig getEs() {
+        return es;
+    }
+
+    public void setEs(ESConfig es) {
+        this.es = es;
+    }
+
+    public KafkaConfig getKafka() {
+        return kafka;
+    }
+
+    public void setKafka(KafkaConfig kafka) {
+        this.kafka = kafka;
+    }
+
+    public StormConfig getStorm() {
+        return storm;
+    }
+
+    public void setStorm(StormConfig storm) {
+        this.storm = storm;
+    }
+
+    public String getRestServiceUrl() {
+        return restServiceUrl;
+    }
+
+    public void setRestServiceUrl(String restServiceUrl) {
+        this.restServiceUrl = restServiceUrl;
+    }
+
+    public List<String> getTransferFields() {
+        return transferFields;
+    }
+
+    public void setTransferFields(List<String> transferFields) {
+        this.transferFields = transferFields;
+    }
+
+    public String getIndexMappingId() {
+        return indexMappingId;
+    }
+
+    public void setIndexMappingId(String indexMappingId) {
+        this.indexMappingId = indexMappingId;
+    }
+
+    public ESConfig getEsLog() {
+        return esLog;
+    }
+
+    public void setEsLog(ESConfig esLog) {
+        this.esLog = esLog;
+    }
+
+    public String getMessageHandlerClass() {
+        return messageHandlerClass;
+    }
+
+    public void setMessageHandlerClass(String messageHandlerClass) {
+        this.messageHandlerClass = messageHandlerClass;
+    }
 }

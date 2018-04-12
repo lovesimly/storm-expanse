@@ -1,30 +1,28 @@
 package expanse.jstorm;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Serializable;
-import java.util.Map;
-
 import backtype.storm.spout.SpoutOutputCollector;
 import backtype.storm.task.TopologyContext;
 import backtype.storm.topology.IRichSpout;
 import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Values;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Slf4j
+import java.io.*;
+import java.util.Map;
+
 public class FileSport implements IRichSpout, Serializable {
 
-    private static final long    serialVersionUID = 868942976113897053L;
+    private static final Logger LOGGER = LoggerFactory.getLogger(FileSport.class);
+
+    private static final long serialVersionUID = 868942976113897053L;
 
     private SpoutOutputCollector collector;
 
-    private FileReader           fileReader;
+    private FileReader fileReader;
 
-    private boolean              completed        = false;
+    private boolean completed = false;
 
     @Override
     public void open(Map map, TopologyContext topologyContext, SpoutOutputCollector spoutOutputCollector) {
