@@ -23,5 +23,5 @@
     "gmt_modified"
   ],
   "indexMappingId": "id",
-  "messageHandlerClass": "com.gtexpanse.app.expanse.biz.impl.PolicyHandlerImpl"
+  "messageHandlerClass": "com.gtexpanse.app.expanse.biz.impl.UserHandlerImpl"
 }
